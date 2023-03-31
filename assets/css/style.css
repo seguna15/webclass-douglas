@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+html{
+    font-size: 10px;
+}
+
+/* RESET Values */
+li{
+    list-style: none;
+}
+
+a, img{
+    display: block;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header{
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding-inline: 2rem;
+}
+
+div.logo{
+    font-size: 3.2rem;
+    font-weight: bold;
+    width: 15%;
+    border: 1px solid black;
+}
+
+nav.navigation {
+    width: 80%;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+nav.navigation > ul.link-group{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2.4rem;
+}
+
+li.link-list > a.link{
+    display: inline-block;
+    text-decoration: none;
+    
+}
+
+/* main content css */
+main{
+    width: 100%;
+    height: 80vh;
+    margin-block: 4rem;
+    padding-inline: 2rem;
+}
+
+section.hero {
+    width: 100%;
+    display: flex;
+}
+
+div:is(.hero-text, .hero-img){
+    width: 50%;
+}
+
+div.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+div.hero-text > p{
+    font-size: 2.4rem;
+}
+
+div.hero-text > h1{
+    font-size: 3.2rem;
+}
+
+div.hero-img > img{
+    width: 100%;
+    height: auto;
+}
+
+
+/* Small devices and tablets */
+
+/**
+** 320px — 480px: Mobile devices
+** 481px — 768px: iPads, Tablets
+** 769px — 1024px: Small screens, laptops
+** 1025px — 1200px: Desktops, large screens
+** 1201px and more —  Extra large screens, TV
+*/
+
+@media screen and  (min-width: 320px) and (max-width: 768px) {
+    header{
+        flex-direction: column;
+        height: auto;
+        padding: 2rem;
+    }
+
+    div.logo{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    nav.navigation{
+        width: 100%;
+    }
+
+    nav.navigation > ul.link-group{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    section.hero {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    div:is(.hero-text, .hero-img){
+    width: 100%;
+}
+
+}
