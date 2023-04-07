@@ -6,9 +6,6 @@
     box-sizing: border-box;
 }
 
-
-
-
 html{
     font-size: 10px;
 }
@@ -26,28 +23,30 @@ body{
     font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
     width: 100%;
+    background-color: azure;
 }
 
 header{
     height: 100px;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     gap: 2rem;
     width: 100%;
     padding-inline: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 div.logo{
     font-size: 3.2rem;
     font-weight: bold;
     width: 15%;
-    border: 1px solid black;
+    color: aliceblue;
 }
 
 nav.navigation {
     width: 80%;
-    border: 1px solid black;
     margin-top: 10px;
 }
 
@@ -60,48 +59,119 @@ nav.navigation > ul.link-group{
 li.link-list > a.link{
     display: inline-block;
     text-decoration: none;
-    
+    color: whitesmoke;
+}
+
+li.link-list > a.link:is(:hover, :focus){
+    color: royalblue;
+    transition: all 1s ease-in .1s;
 }
 
 /* main content css */
 main{
     width: 100%;
-    height: 80vh;
-    margin-block: 4rem;
-    padding-inline: 2rem;
+    min-height: 100vh;
 }
 
 section.hero {
     width: 100%;
-    display: flex;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-div:is(.hero-text, .hero-img){
-    width: 50%;
+div.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-div.hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-div.hero-text > p{
-    font-size: 2.4rem;
+div.hero-text{
+    color: white;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    gap: 1.6rem;
+    z-index: 2;
 }
 
 div.hero-text > h1{
-    font-size: 3.2rem;
+    font-size: 4.8rem;
 }
 
-div.hero-img > img{
+div.hero-text > h1 > span{
+    color: royalblue;
+}
+div.hero-text > p{
+    font-size: 2.4rem;
+    text-align: center;
+    color: royal;
+}
+
+/*About CSS*/
+section.about{
+    width: 80%;
+    margin: 40px auto;
+} 
+
+.section-title{
+    text-align: center;
+    font-size: 36px;
+    color: royalblue;
+    margin-bottom: 20px;
+}
+
+.section-title:after{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 150px;
+    background-color:orange;
+    margin: 2px auto;
+}
+section.about > .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+
+div.about-img > img{
     width: 100%;
     height: auto;
+    margin-top: 40px;
+    border-radius: 25px;
+    box-shadow: 2px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
 
+div.about-text .subtitle{
+    font-size: 24px;
+    margin-block:10px;
+    text-align: center;
+    color: cadetblue;
+}
 
+div.mission > p {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.vision-list{
+    margin-left: 15px;
+}
+div.vision > .vision-list > li{
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 1.4;
+    list-style-type: '👉';
+    padding-left: 5px;
+}
 /* Small devices and tablets */
 
 /**
@@ -115,8 +185,10 @@ div.hero-img > img{
 @media screen and  (min-width: 320px) and (max-width: 768px) {
     header{
         flex-direction: column;
-        height: auto;
+        height: 60vh;
+        background-color: royalblue;
         padding: 2rem;
+        position: static;
     }
 
     div.logo{
@@ -133,13 +205,37 @@ div.hero-img > img{
         gap: 2rem;
     }
 
+    li.link-list > a.link:is(:hover, :focus){
+        color: azure;
+    }
     section.hero {
         flex-direction: column;
+        height: 50vh;
         gap: 2rem;
     }
 
-    div:is(.hero-text, .hero-img){
-    width: 100%;
-}
+    div.overlay{
+        height: 50vh;
+    }
+
+    div.hero-text{
+        width: 80%;
+        text-align: center
+    }
+
+    section.about > .container{
+       grid-template-columns: none;
+       
+    }
+
+    .container.about-text{
+        grid-row: 1;
+    }
+
+    .container > .about-img{
+        grid-row: 2;
+    }
+
 
 }
+
