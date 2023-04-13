@@ -5,34 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header>
+    <header class="">
         <div class="logo">My Page</div>
         <nav class="navigation">
             <ul class="link-group">
                 <li class="link-list">
-                    <a href="" class="link">Home</a>
+                    <a href="#home" class="link">Home</a>
                 </li>
                 <li class="link-list">
-                    <a href="" class="link">About</a>
+                    <a href="#about" class="link">About</a>
                 </li>
                 <li class="link-list">
-                    <a href="" class="link">Team</a>
+                    <a href="#team" class="link">Team</a>
                 </li>
                 <li class="link-list">
-                    <a href="" class="link">Gallery</a>
+                    <a href="#gallery" class="link">Gallery</a>
                 </li>
                 <li class="link-list">
-                    <a href="" class="link">Contact</a>
+                    <a href="#contact" class="link">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="overlay"></div>
             <div class="hero-text">
                 <h1>Coding <span>Earners</span> NG</h1>
@@ -69,6 +70,93 @@
                 </div>
             </div>
         </section>
+        <section class="team" id="team">
+            <h2 class="section-title">our team</h2>
+            <div class="container">
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="./assets/images/john-doe.png" alt="john doe" title="john doe" width="300" height="500">
+                    </div>
+                    <div class="team-description">
+                        <h3>Fullstack Dev</h3>
+                        <p>John Doe</p>
+                        <div class="socials">
+                            <i class="ri-linkedin-box-line"></i>
+                            <i class="ri-twitter-line"></i>
+                            <i class="ri-github-line"></i>
+                            <i class="ri-mail-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="./assets/images/jane-doe.png" alt="jane doe" title="jane doe" width="300" height="500">
+                    </div>
+                    <div class="team-description">
+                        <h3>DevOps Engineer</h3>
+                        <p>Jane Doe</p>
+                        <div class="socials">
+                            <i class="ri-linkedin-box-line"></i>
+                            <i class="ri-twitter-line"></i>
+                            <i class="ri-github-line"></i>
+                            <i class="ri-mail-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="./assets/images/josh-doe.png" alt="josh doe" title="josh doe" width="300" height="500">
+                    </div>
+                    <div class="team-description">
+                        <h3>UI/UX Designer</h3>
+                        <p>Josh Doe</p>
+                        <div class="socials">
+                            <i class="ri-linkedin-box-line"></i>
+                            <i class="ri-twitter-line"></i>
+                            <i class="ri-behance-line"></i>
+                            <i class="ri-mail-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="gallery" class="gallery">
+            <h1 class="section-title">gallery</h1>
+            <div class="container">
+                <img src="./assets/images/gallery-1.jpeg" alt="gallery-1" title="gallery-1" width="400" height="200">
+                <img src="./assets/images/gallery-2.jpeg" alt="gallery-2" title="gallery-2" width="400" height="200">
+                <img src="./assets/images/gallery-3.jpeg" alt="gallery-3" title="gallery-3" width="400" height="200">
+                <img src="./assets/images/gallery-4.jpeg" alt="gallery-4" title="gallery-4" width="400" height="200">
+                <img src="./assets/images/gallery-5.jpeg" alt="gallery-5" title="gallery-5" width="400" height="200">
+                <img src="./assets/images/gallery-6.jpeg" alt="gallery-6" title="gallery-6" width="400" height="200">
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <h2 class="section-title">contact us</h2>
+            <form action="" class="contact-form">
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" name="" id="fullname" placeholder="Enter your full name">
+                </div>
+                <div class="input-group">
+                    <label for="usermail">Email</label>
+                    <input type="text" name="" id="usermail" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea name="" id="message"></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+        </section>
     </main>
+    <footer>
+        <p>Property of <a href="https://skriptapod.ng">SkriptaPod</a>. All right reserved &copy;<span id="year"></span> </p>
+    </footer>
+    <script defer>
+        const year = document.getElementById('year');
+        const date = new Date();
+        year.innerText = date.getFullYear();
+    </script>
 </body>
 </html>
